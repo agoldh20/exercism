@@ -1,20 +1,24 @@
 class Bob
+  def self.question(string)
+    string[-1] == "?"
+  end
+
+  def self.yell(string)
+    string == string.upcase unless string.upcase == string.downcase
+  end
+
+  def self.speachless(string)
+    string == ""
+  end
+
   def self.hey(remark)
     remark.strip!
-    if remark[-1] == "?"
-      if remark[1].match? /([A-Z])/
-        return "Whoa, chill out!"
-      else
-        return "Sure."
-      end
-    elsif remark == ""
+    if speachless(remark)
       return "Fine. Be that way!"
-    elsif remark == remark.upcase
-      unless remark.upcase == remark.downcase
-        return "Whoa, chill out!"
-      else
-        return "Whatever."
-      end
+    elsif yell(remark)
+      return "Whoa, chill out!"
+    elsif question(remark)
+      return "Sure."
     else
       return "Whatever."
     end
