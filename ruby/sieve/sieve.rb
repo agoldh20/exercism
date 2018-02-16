@@ -1,5 +1,3 @@
-require 'prime'
-
 class Sieve
 
   def initialize(number)
@@ -7,13 +5,18 @@ class Sieve
   end
 
   def primes
-    array = []
-    Prime.each(@number) do |prime|
-      array << prime
+    test_array = (2..@number).to_a
+    primes_array = []
+    test_array.each do |number|
+      test_counter = 1
+      test_array.each do |num|
+        test_counter -= 1 if number % num == 0
+      end 
+      primes_array << number if test_counter == 0 
     end
-    array
+    return primes_array
   end
- 
+
 end
 
 module BookKeeping
