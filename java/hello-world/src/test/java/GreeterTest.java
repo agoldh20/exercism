@@ -6,7 +6,12 @@ public class GreeterTest {
 
     @Test
     public void testThatGreeterReturnsTheCorrectGreeting() {
-        assertEquals("Hello, World!", new Greeter().getGreeting());
+        Greeter g = new Greeter();
+
+        String x = g.getGreeting();
+
+        int y = Integer.getInteger(x);
+        assertEquals(1, y);
     }
 
 }

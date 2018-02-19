@@ -1,7 +1,8 @@
 class Greeter {
+    int x;
 
     String getGreeting() {
-        throw new UnsupportedOperationException("Delete this statement and write your own implementation.");
+       x = "2";
     }
 
 }
