@@ -1,6 +1,6 @@
 class Raindrops
   def self.convert(number)
-    string = []
+    string = ""
 
     string << "Pling" if number % 3 == 0
 
@@ -10,7 +10,7 @@ class Raindrops
 
     string << number.to_s unless number % 7 == 0 || number % 5 == 0 || number % 3 == 0
   
-    return string.join
+    string
 
   end
 end
