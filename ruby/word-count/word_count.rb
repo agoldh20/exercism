@@ -1,3 +1,4 @@
+
 class Phrase
   def initialize(string)
     @string = string.downcase.tr(","," ").split(" ")
