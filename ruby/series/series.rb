@@ -3,18 +3,17 @@ class Series
 
   def initialize(initial_string)
     @initial_string = initial_string
+    @count = initial_string.length
     @return_array = []
   end
 
   def slices(number)
-    if number == 1
-      @initial_string.chars
-    elsif number > @initial_string.length
+    if number > @initial_string.length
       raise ArgumentError
     else
       slice_start = 0
       slice_end = number - 1
-      @initial_string.length.times do
+      @count.times do
         return_array << @initial_string.slice(slice_start..slice_end)
         slice_start += 1
         slice_end += 1
