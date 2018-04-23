@@ -10,13 +10,13 @@ class Phrase
         word
       end
     end
-    p @string
+    @string
   end
 
   def word_count
     counter = {}
     @string.each do |word, count|
-      counter["#{word}".to_sym.to_s] = @string.count(word)
+      counter[:"#{word}".to_s] = @string.count(word)
     end
     counter
   end
