@@ -1,0 +1,6 @@
+[
+  "pangram_test.py::PangramTests::test_missing_character_x", 
+  "pangram_test.py::PangramTests::test_pangram_with_only_lower_case", 
+  "pangram_test.py::PangramTests::test_recognizes_a_perfect_lower_case_pangram", 
+  "pangram_test.py::PangramTests::test_sentence_empty"
+]

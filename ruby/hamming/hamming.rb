@@ -12,7 +12,7 @@ class Hamming
           hamming_distance += 1
           hamming_index += 1
           count += 1
-        elsif
+        else
           hamming_index += 1
           count += 1
         end
