@@ -1,0 +1,6 @@
+{
+  "pangram_test.py::PangramTests::test_another_missing_character": true, 
+  "pangram_test.py::PangramTests::test_missing_character_x": true, 
+  "pangram_test.py::PangramTests::test_missing_letters_replaced_by_numbers": true, 
+  "pangram_test.py::PangramTests::test_upper_and_lower_case_versions_of_the_same_character": true
+}
