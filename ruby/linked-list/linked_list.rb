@@ -1,28 +1,28 @@
+class Node
+  attr_accessor :next_node, :prev_node
+
+  def initialize(value)
+    @value = value
+    @next_node = nil
+    @prev_node = nil
+  end
+end
+
 class Deque
-  attr_accessor :array
+  attr_accessor :head, :tail
 
   def initialize
-    @array = []
-  end
-
-  def pop
-    result = @array.delete_at(-1)
-  end
-
-  def shift
-    result = @array.delete_at(0)
+     @head = nil
+     @tail = nil 
   end
 
   def push(number)
-    @array << number
+    @current_node = Node.new(number)
+
+    if !@head
+      @
   end
 
-  def unshift(number)
-    unshift_array = []
-    @array.each_with_index do |element, index|
-      unshift_array[index + 1] = element 
-    end
-    unshift_array[0] = number
-    @array = unshift_array
+  def pop
   end
 end
