@@ -2,9 +2,9 @@ class Node
   attr_accessor :prev_node, :next_node
 
   def initialize(value)
-    @value = value
-    @prev_node = nil
-    @next_node = nil
+    value = value
+    prev_node = nil
+    next_node = nil
   end
 end
 
@@ -17,7 +17,14 @@ class Deque
   end
 
   def pop
-
+    if !@tail
+      nil
+    elsif @head == @tail
+      @head.value
+    else
+      @tail.value
+    end
+      
   end
 
   def shift
@@ -27,11 +34,11 @@ class Deque
   def push(number)
     @current_node = Node.new(number)
     
-    unless @head
+    if !@head
       @head = @current_node
     else
       @current_node.prev_node = @tail
-      
+      @tail.next_node = @current_node
     end
 
     @tail = @current_node
