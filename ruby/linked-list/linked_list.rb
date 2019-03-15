@@ -18,11 +18,17 @@ class Deque
 
   def push(number)
     @current_node = Node.new(number)
+    
+    unless @head
+      @head = @current_node
+    else
+      @current_node.prev_node = @tail
+    end
 
-    if !@head
-      @
+    @tail = @current_node
   end
 
-  def pop
+  def unshift(number)
+    @current_node = Node.new(number)
   end
 end
