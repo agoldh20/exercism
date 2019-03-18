@@ -3,8 +3,8 @@ class Node
 
   def initialize(value)
     @value = value
-    @prev_node = nil
     @next_node = nil
+    @prev_node = nil
   end
 end
 
@@ -16,7 +16,7 @@ class Deque
     @tail = nil
   end
 
-  def pop
+  def reset_list_setup(node)
     if !@tail
       nil
     elsif @head == @tail
@@ -25,28 +25,25 @@ class Deque
       @tail = nil
       number
     else
-      number = @tail.value
-      @tail = @tail.prev_node
-      @tail.next_node = nil
+      if node == @tail
+        number = @tail.value
+        @tail = @tail.prev_node
+        @tail.next_node = nil
+      else
+        number = @head.value
+        @head = @head.next_node
+        @head.prev_node = nil
+      end
       number
     end
-      
+  end
+
+  def pop
+    reset_list_setup(@tail)
   end
 
   def shift
-    if !@head
-      nil
-    elsif @head == @tail
-      number = @head.value
-      @head = nil
-      @tail = nil
-      number
-    else
-      number = @head.value
-      @head = @head.next_node
-      @head.prev_node = nil
-      number
-    end
+    reset_list_setup(@head)
   end
 
   def push(number)
