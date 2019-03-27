@@ -24,15 +24,11 @@ class Hexadecimal
     output = []
     valid = nil
 
-    parsed.each {|element| valid = !!hex_key.has_key?(element) && output << hex_key[element]}
+    parsed.reverse.each_with_index {|element, index| valid = !!hex_key.has_key?(element) && output << hex_key[element] * (16 ** index)}
 
     unless valid
       0
     else
-      output.clear
-      parsed.reverse.each_with_index do |element, index|
-        output << hex_key[element] * (16 ** index)
-      end
       output.reduce(:+)
     end
   end
