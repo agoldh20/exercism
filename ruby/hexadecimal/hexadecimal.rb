@@ -29,7 +29,11 @@ class Hexadecimal
     unless valid
       0
     else
-
+      output.clear
+      parsed.reverse.each_with_index do |element, index|
+        output << hex_key[element] * (16 ** index)
+      end
+      output.reduce(:+)
     end
   end
 end
