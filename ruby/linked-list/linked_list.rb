@@ -63,8 +63,7 @@ class Deque
     @current_node = Node.new(number)
 
     if !@head
-      @head = @current_node
-      @tail = @current_node
+      @head = @tail = @current_node
     else
       @head.prev_node = @current_node
       @current_node.next_node = @head
