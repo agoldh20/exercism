@@ -8,7 +8,7 @@ class Raindrops
 
     string << "Plong" if number % 7 == 0
 
-    string << number.to_s unless number % 7 == 0 || number % 5 == 0 || number % 3 == 0
+    string << number.to_s if string.empty?
   
     string
 
