@@ -3,7 +3,6 @@ require_relative 'hexadecimal'
 
 class HexadecimalTest < Minitest::Test
   def test_hex_1_is_decimal_1
-    
     assert_equal 1, Hexadecimal.new('1').to_decimal
   end
 
